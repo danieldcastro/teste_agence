@@ -15,7 +15,7 @@ class ConfigTheme {
           fontWeight: FontWeight.w500,
         ),
         titleSmall: ConfigTheme.instance().textStyle(
-          fontSize: 20,
+          fontSize: 25,
           fontWeight: FontWeight.w600,
         ),
       );
