@@ -12,10 +12,9 @@ class GlobalShowSnackbarFunction {
         titleText: Text(message,
             style: Get.textTheme.bodySmall!
                 .copyWith(color: AppColors().normalWhiteColor)),
-        backgroundColor: color?.withOpacity(.87) ??
-            AppColors().normalBlackColor.withOpacity(.87),
+        backgroundColor: color ?? AppColors().normalBlackColor,
         colorText: AppColors().normalWhiteColor,
-        borderRadius: 20,
+        borderRadius: 13,
         snackPosition: SnackPosition.TOP,
         animationDuration: const Duration(milliseconds: 500),
         barBlur: 0,

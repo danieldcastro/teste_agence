@@ -111,7 +111,8 @@ class LoginPage extends GetView<LoginController> {
                       children: [
                         Expanded(
                           child: LoginSecondaryMethodsButtonWidget(
-                              iconPath: IconPaths.GOOGLE, onTap: () {}),
+                              iconPath: IconPaths.GOOGLE,
+                              onTap: controller.submitGoogleLogin),
                         ),
                         const SizedBox(
                           width: 20,
