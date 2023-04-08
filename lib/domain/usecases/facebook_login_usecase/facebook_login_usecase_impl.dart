@@ -1,20 +1,20 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:either_dart/either.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:teste_agence/domain/contracts/repositories/google_login_repository.dart';
 
 import '../../../infrastructure/errors/auth_exception.dart';
-import 'google_login_usecase.dart';
+import '../../contracts/repositories/facebook_login_repository.dart';
+import 'facebook_login_usecase.dart';
 
-class GoogleLoginUsecaseImpl implements GoogleLoginUsecase {
-  final GoogleLoginRepository _repository;
+class FacebookLoginUsecaseImpl implements FacebookLoginUsecase {
+  final FacebookLoginRepository _repository;
 
-  GoogleLoginUsecaseImpl({
-    required GoogleLoginRepository repository,
+  FacebookLoginUsecaseImpl({
+    required FacebookLoginRepository repository,
   }) : _repository = repository;
 
   @override
-  Future<Either<AuthException, UserCredential>> signIn() async {
+  Future<Either<AuthException, User>> signIn() async {
     final result = await _repository.signIn();
 
     if (result.isLeft) {
@@ -34,8 +34,8 @@ class GoogleLoginUsecaseImpl implements GoogleLoginUsecase {
   }
 
   @override
-  bool isGoogleLoggedIn() {
-    final result = _repository.isGoogleLoggedIn();
+  bool isFacebookLoggedIn() {
+    final result = _repository.isFacebookLoggedIn();
 
     return result;
   }

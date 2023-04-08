@@ -44,4 +44,20 @@ class GoogleLoginRepositoryImpl implements GoogleLoginRepository {
           AuthException('Não foi possível fazer o sign out com Google'));
     }
   }
+
+  @override
+  bool isGoogleLoggedIn() {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) {
+      return false;
+    }
+
+    for (final info in user.providerData) {
+      if (info.providerId == 'google.com') {
+        return true;
+      }
+    }
+
+    return false;
+  }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:teste_agence/core/util/global_show_snackbar_function.dart';
 import 'package:teste_agence/core/util/mixins/loader_mixin.dart';
+import 'package:teste_agence/domain/usecases/facebook_login_usecase/facebook_login_usecase.dart';
 import 'package:teste_agence/domain/usecases/google_login_usecase/google_login_usecase.dart';
 import 'package:teste_agence/presentation/theme/app_colors.dart';
 
@@ -10,6 +11,7 @@ import '../../../routes/routes.dart';
 
 class LoginController extends GetxController with LoaderMixin {
   final GoogleLoginUsecase _googleLoginUsecase;
+  final FacebookLoginUsecase _facebookLoginUsecase;
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -22,7 +24,9 @@ class LoginController extends GetxController with LoaderMixin {
 
   LoginController({
     required GoogleLoginUsecase googleLoginUsecase,
-  }) : _googleLoginUsecase = googleLoginUsecase;
+    required FacebookLoginUsecase facebookLoginUsecase,
+  })  : _googleLoginUsecase = googleLoginUsecase,
+        _facebookLoginUsecase = facebookLoginUsecase;
 
   void submitLogin() {
     Get.offAllNamed(Routes.HOME);
@@ -42,6 +46,20 @@ class LoginController extends GetxController with LoaderMixin {
           .show(result.left.message, color: AppColors().normalRedColor);
     } else {
       userName.value = result.right.user!.displayName ?? 'Usuário';
+      Get.offAllNamed(Routes.HOME, arguments: userName);
+    }
+  }
+
+  Future<void> submitFacebookLogin() async {
+    isLoading.value = true;
+    final result = await _facebookLoginUsecase.signIn();
+    isLoading.value = false;
+
+    if (result.isLeft) {
+      GlobalShowSnackbarFunction()
+          .show(result.left.message, color: AppColors().normalRedColor);
+    } else {
+      userName.value = result.right.displayName ?? 'Usuário';
       Get.offAllNamed(Routes.HOME, arguments: userName);
     }
   }

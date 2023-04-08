@@ -3,8 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../../infrastructure/errors/auth_exception.dart';
 
-abstract class GoogleLoginRepository {
-  Future<Either<AuthException, UserCredential>> signIn();
+abstract class FacebookLoginUsecase {
+  Future<Either<AuthException, User>> signIn();
   Future<Either<AuthException, void>> signOut();
-  bool isGoogleLoggedIn();
+  bool isFacebookLoggedIn();
 }

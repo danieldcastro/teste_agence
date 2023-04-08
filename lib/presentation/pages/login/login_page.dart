@@ -119,7 +119,8 @@ class LoginPage extends GetView<LoginController> {
                         ),
                         Expanded(
                           child: LoginSecondaryMethodsButtonWidget(
-                              iconPath: IconPaths.FACEBOOK, onTap: () {}),
+                              iconPath: IconPaths.FACEBOOK,
+                              onTap: controller.submitFacebookLogin),
                         )
                       ],
                     ),
