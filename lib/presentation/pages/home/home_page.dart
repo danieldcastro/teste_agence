@@ -12,7 +12,10 @@ class HomePage extends GetView<HomeController> {
       appBar: AppBar(
         title: const Text('HomePage'),
       ),
-      body: Container(),
+      body: TextButton(
+        onPressed: controller.signOut,
+        child: Text('sair'),
+      ),
     );
   }
 }

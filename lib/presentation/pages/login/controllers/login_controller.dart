@@ -25,7 +25,7 @@ class LoginController extends GetxController with LoaderMixin {
   }) : _googleLoginUsecase = googleLoginUsecase;
 
   void submitLogin() {
-    Get.offNamed(Routes.HOME);
+    Get.offAllNamed(Routes.HOME);
   }
 
   void switchShowPassword() {
@@ -42,7 +42,7 @@ class LoginController extends GetxController with LoaderMixin {
           .show(result.left.message, color: AppColors().normalRedColor);
     } else {
       userName.value = result.right.user!.displayName ?? 'Usuário';
-      Get.toNamed(Routes.HOME);
+      Get.offAllNamed(Routes.HOME, arguments: userName);
     }
   }
 

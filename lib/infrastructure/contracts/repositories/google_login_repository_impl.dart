@@ -34,7 +34,10 @@ class GoogleLoginRepositoryImpl implements GoogleLoginRepository {
   @override
   Future<Either<AuthException, void>> signOut() async {
     try {
-      return Right(await FirebaseAuth.instance.signOut());
+      await GoogleSignIn().signOut();
+      await FirebaseAuth.instance.signOut();
+
+      return const Right(null);
     } on Exception catch (e, s) {
       log('Google sign out error', stackTrace: s, error: e);
       return Left(
