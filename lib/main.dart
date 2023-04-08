@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
+import 'core/util/helpers/starts_app_configuration.dart';
 import 'presentation/routes/app_pages.dart';
 import 'presentation/routes/routes.dart';
 import 'presentation/theme/app_colors.dart';
 import 'presentation/theme/app_theme.dart';
 
-void main() {
+Future<void> main() async {
+  await StartsAppConfiguration().configureApp();
   runApp(const MyApp());
 }
 

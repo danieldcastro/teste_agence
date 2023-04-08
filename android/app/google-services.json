@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "948348559516",
+    "project_id": "teste-agence-81ffe",
+    "storage_bucket": "teste-agence-81ffe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948348559516:android:9fd5222d42b011dd680d59",
+        "android_client_info": {
+          "package_name": "br.com.marciano.teste_agence"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "948348559516-09fa57gkfuis2usmnhqktbael1nm0nhh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJ5WFgyT-6BdVVGj5uC2I6d5deCasbf40"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "948348559516-09fa57gkfuis2usmnhqktbael1nm0nhh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
