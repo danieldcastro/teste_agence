@@ -1,12 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:teste_agence/core/util/global_show_snackbar_function.dart';
 import 'package:teste_agence/core/util/mixins/loader_mixin.dart';
 import 'package:teste_agence/domain/usecases/facebook_login_usecase/facebook_login_usecase.dart';
 import 'package:teste_agence/domain/usecases/google_login_usecase/google_login_usecase.dart';
 import 'package:teste_agence/presentation/theme/app_colors.dart';
 
+import '../../../../core/util/ui/global_snackbar.dart';
 import '../../../routes/routes.dart';
 
 class LoginController extends GetxController with LoaderMixin {
@@ -42,8 +42,8 @@ class LoginController extends GetxController with LoaderMixin {
     isLoading.value = false;
 
     if (result.isLeft) {
-      GlobalShowSnackbarFunction()
-          .show(result.left.message, color: AppColors().normalRedColor);
+      GlobalSnackbar.show(result.left.message,
+          color: AppColors().normalRedColor);
     } else {
       userName.value = result.right.user!.displayName ?? 'Usuário';
       Get.offAllNamed(Routes.HOME, arguments: userName);
@@ -56,8 +56,8 @@ class LoginController extends GetxController with LoaderMixin {
     isLoading.value = false;
 
     if (result.isLeft) {
-      GlobalShowSnackbarFunction()
-          .show(result.left.message, color: AppColors().normalRedColor);
+      GlobalSnackbar.show(result.left.message,
+          color: AppColors().normalRedColor);
     } else {
       userName.value = result.right.displayName ?? 'Usuário';
       Get.offAllNamed(Routes.HOME, arguments: userName);

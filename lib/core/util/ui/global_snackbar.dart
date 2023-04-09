@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../presentation/theme/app_colors.dart';
+import '../../../presentation/theme/app_colors.dart';
 
-class GlobalShowSnackbarFunction {
-  show(String message, {Color? color}) {
+class GlobalSnackbar {
+  static SnackbarController show(String message, {Color? color}) {
     return Get.snackbar(message, '',
         messageText: Visibility(
           child: Container(),
