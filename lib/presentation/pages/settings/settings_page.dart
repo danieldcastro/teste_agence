@@ -10,7 +10,7 @@ class SettingsPage extends GetView<SettingsController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('SettingsPage'),
+        title: const Text('Configurações'),
       ),
       body: Container(),
     );

@@ -10,7 +10,7 @@ class ProfilePage extends GetView<ProfileController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ProfilePage'),
+        title: const Text('Meu Perfil'),
       ),
       body: Container(),
     );

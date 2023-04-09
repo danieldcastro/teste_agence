@@ -10,7 +10,7 @@ class MyProductsPage extends GetView<MyProductsController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('MyProductsPage'),
+        title: const Text('Meus Produtos'),
       ),
       body: Container(),
     );
