@@ -46,7 +46,7 @@ class AppTheme {
         ),
         appBarTheme: AppBarTheme(
           elevation: 0,
-          titleTextStyle: Get.textTheme.titleSmall,
+          titleTextStyle: ConfigTheme.textTheme.titleSmall,
           iconTheme: IconThemeData(
             color: AppColors().primaryColor,
           ),
