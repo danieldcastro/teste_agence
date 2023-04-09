@@ -29,10 +29,10 @@ class ProductDetailsController extends GetxController with LoaderMixin {
     isLoading.value = false;
 
     if (result.isLeft) {
-      GlobalSnackbar.show(result.left.message,
-          color: AppColors().normalRedColor);
       isLocated.value = false;
       Get.back();
+      GlobalSnackbar.show(result.left.message,
+          color: AppColors().normalRedColor);
     } else {
       userLatitude.value = result.right.latitude ?? 0;
       userLongitude.value = result.right.longitude ?? 0;

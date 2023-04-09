@@ -47,24 +47,29 @@ class ProductDetailsPage extends GetView<ProductDetailsController> {
                   width: 20,
                 ),
                 Expanded(
-                  child: Column(
-                    children: [
-                      FittedBox(
-                        child: Text(
-                          controller.product.title,
-                          style: Get.textTheme.labelMedium,
-                          maxLines: 1,
+                  child: SizedBox(
+                    height: Get.height / 6,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        FittedBox(
+                          child: Text(
+                            controller.product.title,
+                            style: Get.textTheme.labelMedium,
+                            maxLines: 1,
+                          ),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        controller.product.description,
-                        style: Get.textTheme.bodySmall,
-                        maxLines: 4,
-                      )
-                    ],
+                        SizedBox(
+                          height: Get.height * 0.02,
+                        ),
+                        Text(
+                          controller.product.description,
+                          style: Get.textTheme.bodySmall,
+                          maxLines: 4,
+                        )
+                      ],
+                    ),
                   ),
                 )
               ]),
