@@ -16,7 +16,7 @@ class LoginController extends GetxController with LoaderMixin {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  RxString userName = ''.obs;
+  RxString userName = 'Usuário'.obs;
 
   RxBool showPassword = false.obs;
 
@@ -29,7 +29,7 @@ class LoginController extends GetxController with LoaderMixin {
         _facebookLoginUsecase = facebookLoginUsecase;
 
   void submitLogin() {
-    Get.offAllNamed(Routes.HOME);
+    Get.offAllNamed(Routes.HOME, arguments: userName);
   }
 
   void switchShowPassword() {
