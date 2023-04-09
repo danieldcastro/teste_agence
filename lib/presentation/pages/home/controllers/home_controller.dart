@@ -33,6 +33,8 @@ class HomeController extends GetxController with LoaderMixin {
       result = await _googleLoginUsecase.signOut();
     } else if (_facebookLoginUsecase.isFacebookLoggedIn()) {
       result = await _facebookLoginUsecase.signOut();
+    } else {
+      Get.offAllNamed(Routes.LOGIN);
     }
     isLoading.value = false;
 
