@@ -12,6 +12,9 @@
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
 
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyBeOKWYNTRR-0Wz-lu5VCvEcbnXpRzB4y4"/>
+
         <meta-data 
         android:name="com.facebook.sdk.ApplicationId" 
         android:value="@string/facebook_app_id"/>
